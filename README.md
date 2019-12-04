@@ -40,6 +40,8 @@ This Tour of Heroes tutorial is the conceptual basis for many examples in this d
 
 Hitos del proyecto:
 
+** Revisar archivo en /assets/hitos.txt
+
 - Use built-in Angular directives to show and hide elements and display lists of hero data.
 - Create Angular components to display hero details and show an array of heroes.
 - Use one-way data binding for read-only data.
