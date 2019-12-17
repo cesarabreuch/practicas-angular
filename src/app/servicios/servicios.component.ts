@@ -4,11 +4,12 @@ import { ServicesService } from './services.service';
 @Component({
   selector: 'servicios',
   templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.css']
+  styleUrls: ['./servicios.component.css'],
+  providers: [ServicesService]
 })
 export class ServiciosComponent implements OnInit {
 
-  constructor( public service: ServicesService) { }
+  constructor(public service: ServicesService) { }
 
   ngOnInit() {
   }
