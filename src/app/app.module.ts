@@ -29,12 +29,12 @@ import { ServiciosComponent } from './servicios/servicios.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { 
-        dataEncapsulation: false,
-        delay: 1000
-      }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, {
+    //     dataEncapsulation: false,
+    //     delay: 1000
+    //   }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

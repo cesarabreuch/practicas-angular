@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from './services.service';
+import { filter, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'servicios',
@@ -9,9 +11,16 @@ import { ServicesService } from './services.service';
 })
 export class ServiciosComponent implements OnInit {
 
+  public posts: any;
+
   constructor(public service: ServicesService) { }
 
   ngOnInit() {
+    this.service.getPosts()
+    .subscribe( data => {
+      console.log(data);
+      this.posts = data;
+    });
   }
 
 }
