@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { filter, map } from 'rxjs/operators';
+
 
 
 
@@ -34,5 +36,16 @@ export class ServicesService {
     return this.http.get(this.url);
   }
 
+  public getPostById(){
+    this.http.get(this.url)
+      .pipe(
+        map( (val) =>{
+          for(let i in val){
+            return val[i]
+          }
+        })
+      )
+      .subscribe( data => console.log(data));
+  }
 
 }

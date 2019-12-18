@@ -11,16 +11,28 @@ import { filter, map } from 'rxjs/operators';
 })
 export class ServiciosComponent implements OnInit {
 
-  public posts: any;
+  public posts: any = [];
 
-  constructor(public service: ServicesService) { }
+  constructor(public service: ServicesService) {
+
+  }
 
   ngOnInit() {
+
     this.service.getPosts()
-    .subscribe( data => {
-      console.log(data);
-      this.posts = data;
-    });
+        .subscribe( data => {
+          for ( const i in data){
+            if (data[i].userId === 7) {
+               this.posts.push(data[i]);
+            }
+          }
+          console.log(this.posts);
+
+        });
+
+    this.service.getPostById();
+
+
   }
 
 }
